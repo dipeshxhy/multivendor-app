@@ -1,9 +1,11 @@
-import Image from "next/image";
+import { ThemeToggle } from "@/components/shared/ThemeToggle";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Welcome to multivendor-app</h1>
+    <div className=" flex justify-between items-center">
+      <ThemeToggle />
+      <Button>Home</Button>
     </div>
   );
 }
