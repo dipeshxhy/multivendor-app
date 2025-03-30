@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Barlow } from "next/font/google";
+import {  Barlow } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
+import { ClerkProvider } from "@clerk/nextjs";
 
 const barlowFont = Barlow({
   variable: "--font-barlow",
@@ -23,6 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en">
       
       <body className={` ${barlowFont.variable} antialiased`}>
@@ -37,5 +39,6 @@ export default function RootLayout({
       </ThemeProvider>
         </body>
     </html>
+    </ClerkProvider>
   );
 }
